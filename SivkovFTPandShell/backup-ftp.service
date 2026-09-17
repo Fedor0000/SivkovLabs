@@ -1,0 +1,11 @@
+[Unit]
+Description=Backup directory to first available FTP server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/backup.sh /srv/backup-test 192.168.0.0/24
+EnvironmentFile=-/etc/backup-ftp.conf
+Nice=10
+IOSchedulingClass=idle

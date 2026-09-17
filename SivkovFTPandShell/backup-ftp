@@ -1,0 +1,5 @@
+# Backup every 5 minutes
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash
+
+*/5 * * * * root /usr/local/bin/backup.sh /srv/backup-test 192.168.0.0/24 >> /var/log/backup-ftp.cron.log 2>&1
